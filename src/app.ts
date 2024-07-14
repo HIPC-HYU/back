@@ -1,8 +1,11 @@
 import express, { Express, Request, Response } from 'express';
+import cors from 'cors';
 import auth from './routes/auth';
 
 const app: Express = express();
 const port = process.env.PORT || 4000;
+
+app.use(cors());
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
